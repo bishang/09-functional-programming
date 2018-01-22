@@ -45,9 +45,9 @@ var app = app || {};
   Article.allAuthors = () => {
     return Article.all.map(article => article.author)
       .reduce((acc, cur) => {
-        if (acc.indexOf(cur === -1)) {
+        if (acc.indexOf(cur) === -1) {
           acc.push(cur);
-        };
+        }
         return acc;
       }, []);
   };
@@ -56,11 +56,7 @@ var app = app || {};
     return Article.allAuthors().map(author => {
       return {
         name: author,
-        numWords: Article.all.filter(article => {
-          article.author === author;
-        }).map(article => {
-          article.body.split(' ').length;
-        }).reduce((acc, cum) => acc + cum)
+        numWords: Article.all.filter(article => article.author === author).map(article => article.body.split(' ').length).reduce((acc, cum) => acc + cum)
       }
     })
   };
@@ -108,4 +104,6 @@ var app = app || {};
       .then(console.log)
       .then(callback);
   };
+
+  module.Article = Article;
 })(app)

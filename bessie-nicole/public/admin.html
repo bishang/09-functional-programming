@@ -13,8 +13,8 @@
 
     <script id="author-stats-template" type="text/x-handlebars-template">
 
-      <li>Author name: {{author}}</li>
-      <li>Words by author: {{numWordsByAuthor}}</li>
+      <li>Author name: {{name}}</li>
+      <li>Words by author: {{numWords}}</li>
 
     </script>
   </head>
@@ -55,7 +55,7 @@
     <script src="/scripts/article.js"></script>
     <script src="/scripts/articleView.js"></script>
     <script>
-      Article.fetchAll(app.articleView.initAdminPage());
+      app.Article.fetchAll(app.articleView.initAdminPage);
     </script>
   </body>
 </html>
