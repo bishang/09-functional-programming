@@ -45,7 +45,7 @@ var app = app || {};
   Article.allAuthors = () => {
     return Article.all.map(article => article.author)
       .reduce((acc, cur) => {
-        if (acc.indexOf(cur === -1)) {
+        if (acc.indexOf(cur) === -1) {
           acc.push(cur);
         }
         return acc;
