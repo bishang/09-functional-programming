@@ -47,7 +47,7 @@ var app = app || {};
       .reduce((acc, cur) => {
         if (acc.indexOf(cur === -1)) {
           acc.push(cur);
-        };
+        }
         return acc;
       }, []);
   };
