@@ -140,5 +140,7 @@ var app = app || {};
     // REVIEW: Simply write the correct values to the page:
     $('#blog-stats .articles').text(app.Article.all.length);
     $('#blog-stats .words').text(app.Article.numWordsAll());
+
+    return template(this);
   };
 })(app)
