@@ -56,11 +56,7 @@ var app = app || {};
     return Article.allAuthors().map(author => {
       return {
         name: author,
-        numWords: Article.all.filter(article => {
-          article.author === author;
-        }).map(article => {
-          article.body.split(' ').length;
-        }).reduce((acc, cum) => acc + cum)
+        numWords: Article.all.filter(article => article.author === author).map(article => article.body.split(' ').length).reduce((acc, cum) => acc + cum)
       }
     })
   };
